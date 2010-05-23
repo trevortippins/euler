@@ -1,0 +1,18 @@
+This project is just a collection of Groovy scripts
+and some Java classes that I've used to solve various
+Project Euler problems.
+
+Project Euler: http://projecteuler.net
+
+You can read more about the solutions and my thinking
+behind them on my blog.
+
+Blog: http://keyzero.wordpress.com
+
+Most of the solutions for problems 1-100 were written
+for Groovy 1.6.4 but later ones may be using 1.7.x
+features. The blog comments on the solution will
+note as such.
+
+Have fun!
+
