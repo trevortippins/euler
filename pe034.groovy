@@ -15,7 +15,7 @@ def solve(n, sum, fact) {
     def s = (n == 0) ? 1 : 0
     for (i in s..9)
       total += solve(n * 10 + i, sum + fact[i], fact)
-    }
+  }
   return total
 }
 
