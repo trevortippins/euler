@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<project name="euler" default="compile" basedir=".">
+
+  <description>
+    Simple build file for Project Euler solutions.
+  </description>
+
+  <property name="src.dir" location="src"/>
+  <property name="classes.dir" location="classes"/>
+  <property environment="env"/>
+
+  <taskdef name="groovy" classname="org.codehaus.groovy.ant.Groovy">
+    <classpath>
+      <fileset dir="/${env.GROOVY_HOME}/embeddable" includes="*.jar"/>
+    </classpath>
+  </taskdef>
+
+  <target name="init" description="create the output directory">
+    <mkdir dir="${classes.dir}"/>
+  </target>
+
+  <target name="compile" depends="init" description="compile the source">
+    <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+  </target>
+
+  <target name="clean" description="clean up">
+    <delete dir="${classes.dir}"/>
+  </target>
+
+  <target name="run" depends="compile" description="run a solution">
+    <groovy src="${script}.groovy">
+      <classpath>
+        <pathelement location="${classes.dir}"/>
+      </classpath>
+    </groovy>
+  </target>
+
+  <target name="help" description="display detailed usage information">
+    <echo>Target           Args                 Description</echo>
+    <echo>run          -Dscript=&lt;script&gt;        Runs specified Groovy script</echo>
+    <echo>               (no .groovy suffix e.g. -Dscript=pe001)</echo>
+    <echo>clean        -- None --               Removes output directory</echo>
+    <echo>compile      -- None --               Compiles Java classes</echo>
+    <echo>init         -- None --               Creates output directory</echo>
+    <echo>help         -- None --               Display detailed usage info</echo>
+  </target>
+
+</project>
