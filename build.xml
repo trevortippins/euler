@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="euler" default="compile" basedir=".">
+<project name="euler" default="help" basedir=".">
 
   <description>
     Simple build file for Project Euler solutions.
