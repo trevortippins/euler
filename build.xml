@@ -20,7 +20,7 @@
   </target>
 
   <target name="compile" depends="init" description="compile the source">
-    <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false"/>
   </target>
 
   <target name="clean" description="clean up">
