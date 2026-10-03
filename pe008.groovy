@@ -32,9 +32,9 @@ def s = """
 
 def answer = 0
 
-for (i in 0..s.length()-5) {
+for (i in 0..s.length()-13) {
   answer = [ answer,
-             (s[i..i+4]).inject(1) { r, n -> r * n.toInteger() }
+             (s[i..i+12]).inject(1) { r, n -> r * n.toLong() }
            ].max()
 }
 
