@@ -3,17 +3,17 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=59
+    https://projecteuler.net/problem=59
     http://keyzero.wordpress.com/2009/11/07/project-euler-problem-59/
  *********************************************************************/
 
 def seqs = [ [], [], [] ]
 
-new URL("http://projecteuler.net/project/cipher1.txt")
+new URL("https://projecteuler.net/resources/documents/0059_cipher.txt")
         .getText()
         .split(",")
-	.eachWithIndex { val, idx ->
-          seqs[idx % seqs.size()] << val.toInteger()
+	    .eachWithIndex { val, idx ->
+            seqs[idx % seqs.size()] << val.toInteger()
         }
 
 def answer = 0
