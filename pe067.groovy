@@ -3,12 +3,12 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=67
+    https://projecteuler.net/problem=67
     http://keyzero.wordpress.com/2010/02/08/project-euler-problem-67/
  *********************************************************************/
 
 def tiers = []
-new URL("http://projecteuler.net/project/triangle.txt")
+new URL("https://projecteuler.net/resources/documents/0067_triangle.txt")
         .getText()
         .eachLine { line ->
     tiers << line.trim().split(" ")*.toInteger()
