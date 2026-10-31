@@ -3,8 +3,8 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
- http://projecteuler.net/index.php?section=problems&id=54
- // http://keyzero.wordpress.com/2016/11/18/project-euler-problem-54/
+    https://projecteuler.net/problem=54
+    https://keyzero.wordpress.com/2016/11/18/project-euler-problem-54/
  *********************************************************************/
 
 class Hand {
@@ -14,11 +14,13 @@ class Hand {
     private final _isFlush
 
     Hand(cardList) {
-        def vals = cardList.collect { ['face': '23456789TJQKA'.indexOf(it[0]), 'suit': it[1]] }
+        def vals = cardList.collect {
+            ['face': '23456789TJQKA'.indexOf(it[0]), 'suit': 'CDHS'.indexOf(it[1])]
+        }
 
         _isFlush = (vals.groupBy { it.suit }.size() == 1 )
         _cards   = vals.groupBy { it.face }
-                       .collect { [ (it.value.size), it.key ] }
+                       .collect { [ (it.value.size()), it.key ] }
                        .sort { -(it[0] * 13 + it[1]) }
         _isStraight = (_cards.size() == 5) && (_cards[0][1] - _cards[-1][1] == 4)
     }
@@ -46,14 +48,6 @@ class Hand {
         assert (s1 != s2)
     }
 }
-
-// def handList = new URL('https://projecteuler.net/project/resources/p054_poker.txt').text
-
-//handList.eachLine {
-//new File('pe054_poker.txt').eachLine {
-//    def cards = it.split(" ")
-//    if (new Hand(cards[0..4]).beats(new Hand(cards[5..-1]))) answer++
-//}
 
 def answer = new File('pe054_poker.txt').readLines().count {
     def cards = it.split(" ")
