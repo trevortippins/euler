@@ -3,12 +3,12 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=77
+    https://projecteuler.net/problem=77
     http://keyzero.wordpress.com/2010/09/04/project-euler-problem-77/
  *********************************************************************/
 
 def primes =
-    (1..<100).findAll { new BigInteger(it).isProbablePrime(100) }
+    (1..<100).findAll { BigInteger.valueOf(it).isProbablePrime(100) }
 
 def ( answer, total ) = [ 0, 11 ]
 
