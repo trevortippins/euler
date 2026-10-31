@@ -3,12 +3,12 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=42
+    https://projecteuler.net/problem=42
     http://keyzero.wordpress.com/2010/04/28/project-euler-problem-42/
  *********************************************************************/
 
 def answer =
-    new URL("http://projecteuler.net/project/words.txt")
+    new URL("https://projecteuler.net/resources/documents/0042_words.txt")
              .getText()
              .replaceAll("\"","").split(",")
              .findAll { word ->
