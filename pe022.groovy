@@ -3,19 +3,19 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=22
+    https://projecteuler.net/problem=22
     http://keyzero.wordpress.com/2010/02/09/project-euler-problem-22/
  *********************************************************************/
 
 def (answer, BASE_CHAR) = [ 0, ((char)'A').charValue() - 1 ]
 
-new URL("http://projecteuler.net/project/names.txt")
+new URL("https://projecteuler.net/resources/documents/0022_names.txt")
         .getText()
         .replaceAll("\"","")
         .split(",")
         .sort()
         .eachWithIndex { name, idx ->
-            answer += (idx+1) * name.toList().sum {
+            answer += (idx+1) * name.toList().sum(0) {
                 ((char)it).charValue() - BASE_CHAR
             }
         }
