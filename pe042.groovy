@@ -12,7 +12,7 @@ def answer =
              .getText()
              .replaceAll("\"","").split(",")
              .findAll { word ->
-        def wv = word.collect { c -> ((char)c).charValue() - 64 }.sum()
+        def wv = word.collect { c -> (c as char).charValue() - 64 }.sum()
         def sqrt = (int)((wv * 2) ** 0.5)
         sqrt * (sqrt + 1) == wv * 2
     }.size()

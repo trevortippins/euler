@@ -16,7 +16,7 @@ new URL("https://projecteuler.net/resources/documents/0022_names.txt")
         .sort()
         .eachWithIndex { name, idx ->
             answer += (idx+1) * name.toList().sum(0) {
-                ((char)it).charValue() - BASE_CHAR
+                (it as char).charValue() - BASE_CHAR
             }
         }
 

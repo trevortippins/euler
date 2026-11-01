@@ -3,13 +3,13 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=99
+    https://projecteuler.net/problem=99
     http://keyzero.wordpress.com/2009/11/18/project-euler-problem-99/
  *********************************************************************/
 
 def ( i, answer, max ) = [ 1, -1, 0.0 ]
 
-new URL("http://projecteuler.net/project/base_exp.txt")
+new URL("https://projecteuler.net/resources/documents/0099_base_exp.txt")
         .getText()
         .eachLine {
 

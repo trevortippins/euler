@@ -3,7 +3,7 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=98
+    https://projecteuler.net/problem=98
     http://keyzero.wordpress.com/2010/04/10/project-euler-problem-98/
  *********************************************************************/
 
@@ -26,7 +26,7 @@ def ( nums, answer ) = [ [:], 0 ]
   nums[it] = (min..max).collect { (it * it).toInteger() }
 }
 
-new URL("http://projecteuler.net/project/words.txt")
+new URL("https://projecteuler.net/resources/documents/0098_words.txt")
     .getText()
     .replace("\"","")
     .tokenize(",")
