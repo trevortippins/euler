@@ -3,7 +3,7 @@
 def _ticks = System.nanoTime()
 
 /**********************************************************************
-    http://projecteuler.net/index.php?section=problems&id=96
+    https://projecteuler.net/problem=96
     http://keyzero.wordpress.com/2010/06/14/project-euler-problem-96/
  *********************************************************************/
 
@@ -105,7 +105,8 @@ def solve(lines) {
 def answer = 0
 
 def sudoku_text =
-    new URL("http://projecteuler.net/project/sudoku.txt").getText().split("\r\n")
+    new URL("https://projecteuler.net/resources/documents/0096_sudoku.txt")
+            .getText().split("\n")
 
 sudoku_text.eachWithIndex { line, idx ->
   if (line.startsWith("Grid")) {
